@@ -1,3 +1,4 @@
+/*! pym.js - v1.3.2 - 2018-02-13 */
 /*
 * Pym.js is library that resizes an iframe based on the width of the parent and the resulting height of the child.
 * Check out the docs at http://blog.apps.npr.org/pym.js/ or the readme at README.md for usage.
@@ -378,9 +379,6 @@
 
             // Create an iframe element attached to the document.
             this.iframe = document.createElement('iframe');
-
-            // Replace hex with '&' to preserve URL parameters.
-            this.url = this.url.replace(/&#038;/g, "&");
 
             // Save fragment id
             var hash = '';
@@ -1109,13 +1107,11 @@
         return this;
     };
 
-    // @ifdef AUTOINIT
     // Initialize elements with pym data attributes
     // if we are not in server configuration
     if(typeof document !== "undefined") {
         lib.autoInit(true);
     }
-    // @endif
 
     return lib;
 });
